@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Notifications from './components/Notifications';
+import Options from './components/Options';
+import VideoPlayer from './components/VideoPlayer';
+import { FcVideoCall } from 'react-icons/fc';
+import { FaDev } from 'react-icons/fa';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <div className="header__logo">
+         <FcVideoCall className='header__icon' /> JustChat App
+        </div>
       </header>
-    </div>
+
+      <section>
+        <VideoPlayer />
+        <Options>
+        <Notifications />
+        </Options>
+      </section>
+      
+      <footer>
+        All rights reserved { new Date().getFullYear() } 
+        <div style={{marginTop:'1.5rem'}}>Made with love by <FaDev className='icon' style={{color:'white'}} /> Alvin</div>
+      </footer>
+    </>
   );
 }
 
